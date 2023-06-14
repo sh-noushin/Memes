@@ -1,3 +1,4 @@
+import { XhrFactory } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ColorEvent } from 'ngx-color';
 
@@ -93,6 +94,16 @@ export class MemeGeneratorComponent {
     this.fillTopText();
 
 
+  }
+
+  download()
+  {
+    let c = this.canvas?.nativeElement;  
+    let img = c.toDataURL('image/jpg');
+    let x = document.createElement('a');
+    x.download = 'meme.jpg';
+    x.href = img;
+    x.click();
   }
 
   
