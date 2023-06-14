@@ -21,15 +21,14 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="label">Top Text Color</label>
-                                            <color-chrome></color-chrome>
-
+                                            <color-chrome (onChangeComplete) ="onSelectedColorTop($event)"></color-chrome>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group" style="margin-top: 30px;">
-                                            <select #top (change)="onSelectedTop(top.value)" style="margin-top: 10px;">
-                                                <option default>Top text font</option>
-                                                <option>Arial</option>
+                                            <select #top (change)="onSelectedFontTop(top.value)" style="margin-top: 10px;">
+                                                <option>{{topFont}}</option>
                                                 <option>Comic Sans MS</option>
                                                 <option>Pacifico</option>
                                             </select>
@@ -46,15 +45,14 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="label">Bottom Text Color</label>
-                                            <color-chrome></color-chrome>
+                                            <color-chrome (onChangeComplete) ="onSelectedColorBottom($event)" ></color-chrome>
 
                                         </div>
                                     </div>
                                     <div class="col-md-6" style="margin-top: 30px;">
                                         <div class="form-group">
-                                            <select #top (change)="onSelectedBottom(top.value)" style="margin-top: 10px;">
-                                                <option default>Bottom text font</option>
-                                                <option>Arial</option>
+                                            <select #bottom (change)="onSelectedFontBottom(bottom.value)" style="margin-top: 10px;">
+                                                 <option>{{bottomFont}}</option>
                                                 <option>Comic Sans MS</option>
                                                 <option>Pacifico</option>
                                             </select>
@@ -65,33 +63,7 @@
 
 
                             </div>
-                            <!-- <div class="row" style="margin-top: 10px;">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="label">Top Text Color</label>
-                                        <color-chrome></color-chrome>
-                                        <select #top (change)="onSelectedTop(top.value)" style="margin-top: 10px;">
-                                            <option default>Top text font</option>
-                                            <option>Arial</option>
-                                            <option>Comic Sans MS</option>
-                                            <option>Pacifico</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="label">Bottom Text Color</label>
-                                        <color-chrome></color-chrome>
-                                        <select #bottom (change)="onSelectedBottom(bottom.value)"
-                                            style="margin-top: 10px;">
-                                            <option default>Bottom text font</option>
-                                            <option>Arial</option>
-                                            <option>Comic Sans MS</option>
-                                            <option>Pacifico</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div> -->
+                           
                             <button class="btn btn-primary" style="margin-top: 10px;">Download Meme</button>
                         </form>
                     </div>

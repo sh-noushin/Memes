@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ColorEvent } from 'ngx-color';
 
 @Component({
   selector: 'app-meme-generator',
@@ -10,8 +11,8 @@ export class MemeGeneratorComponent {
   @ViewChild('myCanvas', {static:false}) canvas: ElementRef<HTMLCanvasElement> | any;
   topFont : string = 'Arial';
   bottomFont : string = 'Arial';
-  topColor : string = '';
-  bottomColor : string = '';
+  topColor : string = '#000000';
+  bottomColor : string = '#000000';
   file:any;
 
 
@@ -43,6 +44,7 @@ export class MemeGeneratorComponent {
   fillTopText()
   {
     
+    
     let c = this.canvas?.nativeElement.getContext('2d');  
     c.clearRect(0, 0, this.canvas?.nativeElement.width, this.canvas?.nativeElement.height); 
     if(this.file)
@@ -51,28 +53,48 @@ export class MemeGeneratorComponent {
     }
     c.textAlign = 'center';
     c.font = '40px ' + this.topFont;
-    c.color = this.topColor
+    c.fillStyle = this.topColor
     c.fillText(this.topTxt, this.canvas.nativeElement.width/2, 90);
     c.font = '40px '+ this.bottomFont;
-    c.color = this.bottomColor
+    c.fillStyle = this.bottomColor
     c.fillText(this.bottomTxt, this.canvas.nativeElement.width/2, 640);
    
   }
 
-  onSelectedTop(input: any)
+  onSelectedFontTop(input: any)
   {
+    
     this.topFont = input;
     this.fillTopText();
 
   }
 
-  onSelectedBottom(input: any)
+  onSelectedFontBottom(input: any)
   {
+   
     this.bottomFont = input;
     this.fillTopText();
 
 
   }
 
+  onSelectedColorTop($input: ColorEvent)
+  {
+    
+    this.topColor = $input.color.hex;
+    this.fillTopText();
+
+  }
+
+  onSelectedColorBottom($input: any)
+  {
+   
+    this.bottomColor = $input.color.hex;
+    this.fillTopText();
+
+
+  }
+
+  
 }
 
