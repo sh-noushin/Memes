@@ -1,7 +1,7 @@
-<div class="app">
+<div class="app" style="margin-top: 10px;">
     <div class="container">
         <div class="row">
-            <div class="col-md-6" style="margin-top: 10px;">
+            <div class="col-md-6">
 
                 <div class="card">
                     <div class="card-body">
@@ -10,43 +10,98 @@
 
                             <div class="form-group">
                                 <label class="label">Select a Picture</label>
-                                <input type="file" class="form-control" accept="image/*">
+                                <input type="file" class="form-control" (change)='loadImage($event)' accept="image/*">
 
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="margin-top: 20px;">
                                 <label class="label">Top Text</label>
-                                <input type="text" class="form-control" name="topText">
+                                <input type="text" class="form-control" name="topText" [(ngModel)]='topTxt'
+                                    (keyup)="fillTopText()">
+                                <div class="row" style="margin-top: 10px;">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label">Top Text Color</label>
+                                            <color-chrome></color-chrome>
 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group" style="margin-top: 30px;">
+                                            <select #top (change)="onSelectedTop(top.value)" style="margin-top: 10px;">
+                                                <option default>Top text font</option>
+                                                <option>Arial</option>
+                                                <option>Comic Sans MS</option>
+                                                <option>Pacifico</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
+
+                            <div class="form-group" style="margin-top: 20px;">
                                 <label class="label">Bottom Text</label>
-                                <input type="text" class="form-control" name="bottomText">
+                                <input type="text" class="form-control" name="bottomText" [(ngModel)]='bottomTxt'
+                                    (keyup)="fillTopText()">
+                                <div class="row" style="margin-top: 10px;">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="label">Bottom Text Color</label>
+                                            <color-chrome></color-chrome>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="margin-top: 30px;">
+                                        <div class="form-group">
+                                            <select #top (change)="onSelectedBottom(top.value)" style="margin-top: 10px;">
+                                                <option default>Bottom text font</option>
+                                                <option>Arial</option>
+                                                <option>Comic Sans MS</option>
+                                                <option>Pacifico</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+
 
                             </div>
-                            <div class="row" style="margin-top: 10px;">
+                            <!-- <div class="row" style="margin-top: 10px;">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="label">Top Text Color</label>
                                         <color-chrome></color-chrome>
+                                        <select #top (change)="onSelectedTop(top.value)" style="margin-top: 10px;">
+                                            <option default>Top text font</option>
+                                            <option>Arial</option>
+                                            <option>Comic Sans MS</option>
+                                            <option>Pacifico</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="label">Bottom Text Color</label>
                                         <color-chrome></color-chrome>
+                                        <select #bottom (change)="onSelectedBottom(bottom.value)"
+                                            style="margin-top: 10px;">
+                                            <option default>Bottom text font</option>
+                                            <option>Arial</option>
+                                            <option>Comic Sans MS</option>
+                                            <option>Pacifico</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </div>
-                            <button class="btn btn-primary" style="margin-top: 10px;">Download</button>
+                            </div> -->
+                            <button class="btn btn-primary" style="margin-top: 10px;">Download Meme</button>
                         </form>
                     </div>
 
                 </div>
 
             </div>
-            <div class="col-md-6" style="margin-top: 10px;">
-                <canvas class="drop-shadow" #myCanvas width="550" height="650"
-                style="background-color: rgb(239, 232, 224);"></canvas>
+            <div class="col-md-6">
+                <canvas class="drop-shadow" #myCanvas width="550" height="700"
+                    style="background-color: rgb(239, 232, 224);"></canvas>
 
 
             </div>

@@ -4,6 +4,7 @@ import {ColorChromeModule} from 'ngx-color/chrome';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MemeGeneratorComponent } from './meme-generator/meme-generator.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MemeGeneratorComponent } from './meme-generator/meme-generator.componen
   ],
   imports: [
     BrowserModule,
-    ColorChromeModule
+    ColorChromeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
