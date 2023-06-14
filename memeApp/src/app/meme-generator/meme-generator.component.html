@@ -1,1 +1,58 @@
-<p>meme-generator works!</p>
+<div class="app">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" style="margin-top: 10px;">
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <form>
+
+                            <div class="form-group">
+                                <label class="label">Select a Picture</label>
+                                <input type="file" class="form-control" accept="image/*">
+
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Top Text</label>
+                                <input type="text" class="form-control" name="topText">
+
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Bottom Text</label>
+                                <input type="text" class="form-control" name="bottomText">
+
+                            </div>
+                            <div class="row" style="margin-top: 10px;">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="label">Top Text Color</label>
+                                        <color-chrome></color-chrome>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="label">Bottom Text Color</label>
+                                        <color-chrome></color-chrome>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" style="margin-top: 10px;">Download</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-6" style="margin-top: 10px;">
+                <canvas class="drop-shadow" #myCanvas width="550" height="650"
+                style="background-color: rgb(239, 232, 224);"></canvas>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

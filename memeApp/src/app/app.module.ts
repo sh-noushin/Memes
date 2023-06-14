@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {ColorChromeModule} from 'ngx-color/chrome';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MemeGeneratorComponent } from './meme-generator/meme-generator.component';
@@ -12,7 +12,8 @@ import { MemeGeneratorComponent } from './meme-generator/meme-generator.componen
     MemeGeneratorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ColorChromeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
