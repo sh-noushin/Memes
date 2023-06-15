@@ -26,12 +26,24 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group" style="margin-top: 30px;">
+                                        <div class="form-group">
+                                            <div>
+                                                <label class="label">Selecet Top Text font </label>
+                                            </div>
+                                            
                                             <select #top (change)="onSelectedFontTop(top.value)" style="margin-top: 10px;">
-                                                <option>{{topFont}}</option>
+                                                <option>Arial</option>
                                                 <option>Comic Sans MS</option>
                                                 <option>Pacifico</option>
                                             </select>
+
+                                            <div class="form-group" style="margin-top: 15px;">
+                                                <label class="label">Top Text size </label>
+                                                <input type="number" class="form-control" name="topSize"
+                                                style="width: 130px;"
+                                                 [(ngModel)]='topSize'
+                                                (change)="fillTopText()">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -44,18 +56,30 @@
                                 <div class="row" style="margin-top: 10px;">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="label">Bottom Text Color</label>
+                                            <div>
+                                                <label class="label">Bottom Text Color</label>
+
+                                            </div>
+                                            
                                             <color-chrome (onChangeComplete) ="onSelectedColorBottom($event)" ></color-chrome>
 
                                         </div>
                                     </div>
-                                    <div class="col-md-6" style="margin-top: 30px;">
+                                    <div class="col-md-6">
                                         <div class="form-group">
+                                            <label class="label">Selecet Bottom Text font </label>
                                             <select #bottom (change)="onSelectedFontBottom(bottom.value)" style="margin-top: 10px;">
-                                                 <option>{{bottomFont}}</option>
+                                                <option>Arial</option>
                                                 <option>Comic Sans MS</option>
                                                 <option>Pacifico</option>
                                             </select>
+                                            <div class="form-group" style="margin-top: 15px;">
+                                                <label class="label">Bottom Text size </label>
+                                                <input type="number" class="form-control" name="bottomSize" 
+                                                style="width: 130px;"
+                                                [(ngModel)]='bottomSize'
+                                                (change)="fillTopText()">
+                                            </div>
                                         </div>
                                     </div>
 

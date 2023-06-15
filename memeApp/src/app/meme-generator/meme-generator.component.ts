@@ -14,6 +14,9 @@ export class MemeGeneratorComponent {
   bottomFont : string = 'Arial';
   topColor : string = '#000000';
   bottomColor : string = '#000000';
+  topSize : string = '40';
+  bottomSize : string = '40';
+
   file:any;
 
 
@@ -45,20 +48,20 @@ export class MemeGeneratorComponent {
   fillTopText()
   {
     
-    
     let c = this.canvas?.nativeElement.getContext('2d');  
     c.clearRect(0, 0, this.canvas?.nativeElement.width, this.canvas?.nativeElement.height); 
     if(this.file)
     {
-    this.loadImage(this.file);
+      this.loadImage(this.file);
     }
     c.textAlign = 'center';
-    c.font = '40px ' + this.topFont;
-    c.fillStyle = this.topColor
+    c.font = this.topSize + 'px ' + this.topFont;
+    c.fillStyle = this.topColor;
     c.fillText(this.topTxt, this.canvas.nativeElement.width/2, 90);
-    c.font = '40px '+ this.bottomFont;
-    c.fillStyle = this.bottomColor
+    c.font = this.bottomSize + 'px '+ this.bottomFont;
+    c.fillStyle = this.bottomColor;
     c.fillText(this.bottomTxt, this.canvas.nativeElement.width/2, 640);
+    c.fillStyle ='#000000';
    
   }
 
