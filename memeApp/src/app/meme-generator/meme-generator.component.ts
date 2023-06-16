@@ -16,6 +16,7 @@ export class MemeGeneratorComponent {
   bottomColor : string = '#000000';
   topSize : string = '40';
   bottomSize : string = '40';
+  backColor : string = 'rgb(239, 232, 224)';
 
   file:any;
 
@@ -50,6 +51,8 @@ export class MemeGeneratorComponent {
     
     let c = this.canvas?.nativeElement.getContext('2d');  
     c.clearRect(0, 0, this.canvas?.nativeElement.width, this.canvas?.nativeElement.height); 
+    c.fillStyle = this.backColor;
+    c.fillRect(0, 0, this.canvas?.nativeElement.width, this.canvas?.nativeElement.height);
     if(this.file)
     {
       this.loadImage(this.file);
@@ -61,7 +64,7 @@ export class MemeGeneratorComponent {
     c.font = this.bottomSize + 'px '+ this.bottomFont;
     c.fillStyle = this.bottomColor;
     c.fillText(this.bottomTxt, this.canvas.nativeElement.width/2, 640);
-    c.fillStyle ='#000000';
+    
    
   }
 
@@ -96,6 +99,14 @@ export class MemeGeneratorComponent {
     this.bottomColor = $input.color.hex;
     this.fillTopText();
 
+
+  }
+
+  onSelectedBackgroundColor($input: any)
+  {
+    debugger
+    this.backColor = $input.color.hex;
+    this.fillTopText();
 
   }
 
