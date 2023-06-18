@@ -46,7 +46,7 @@ export class MemeGeneratorComponent {
 
   }
 
-  fillTopText()
+  fillTexts()
   {
     
     let c = this.canvas?.nativeElement.getContext('2d');  
@@ -72,7 +72,7 @@ export class MemeGeneratorComponent {
   {
     
     this.topFont = input;
-    this.fillTopText();
+    this.fillTexts();
 
   }
 
@@ -80,7 +80,7 @@ export class MemeGeneratorComponent {
   {
    
     this.bottomFont = input;
-    this.fillTopText();
+    this.fillTexts();
 
 
   }
@@ -89,7 +89,7 @@ export class MemeGeneratorComponent {
   {
     
     this.topColor = $input.color.hex;
-    this.fillTopText();
+    this.fillTexts();
 
   }
 
@@ -97,7 +97,7 @@ export class MemeGeneratorComponent {
   {
    
     this.bottomColor = $input.color.hex;
-    this.fillTopText();
+    this.fillTexts();
 
 
   }
@@ -106,7 +106,7 @@ export class MemeGeneratorComponent {
   {
     debugger
     this.backColor = $input.color.hex;
-    this.fillTopText();
+    this.fillTexts();
 
   }
 

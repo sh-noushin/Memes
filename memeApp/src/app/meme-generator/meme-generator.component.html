@@ -16,7 +16,7 @@
                             <div class="form-group" style="margin-top: 20px;">
                                 <label class="label">Top Text</label>
                                 <input type="text" class="form-control" name="topText" [(ngModel)]='topTxt'
-                                    (keyup)="fillTopText()">
+                                    (keyup)="fillTexts()">
                                 <div class="row" style="margin-top: 10px;">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -42,7 +42,7 @@
                                                 <input type="number" class="form-control" name="topSize"
                                                 style="width: 130px;"
                                                  [(ngModel)]='topSize'
-                                                (change)="fillTopText()">
+                                                (change)="fillTexts()">
                                             </div>
                                         </div>
                                     </div>
@@ -52,7 +52,7 @@
                             <div class="form-group" style="margin-top: 20px;">
                                 <label class="label">Bottom Text</label>
                                 <input type="text" class="form-control" name="bottomText" [(ngModel)]='bottomTxt'
-                                    (keyup)="fillTopText()">
+                                    (keyup)="fillTexts()">
                                 <div class="row" style="margin-top: 10px;">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -80,7 +80,7 @@
                                                 <input type="number" class="form-control" name="bottomSize" 
                                                 style="width: 130px;"
                                                 [(ngModel)]='bottomSize'
-                                                (change)="fillTopText()">
+                                                (change)="fillTexts()">
                                             </div>
                                         </div>
                                     </div>
